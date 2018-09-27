@@ -30,13 +30,13 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig']
 
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form_themes:
-            - '@SonataCore/Form/datepicker.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -71,3 +71,13 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+# Configure Assetic
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        less:
+            node: /usr/local/bin/node
+            node_paths: [/usr/local/lib/node_modules]
