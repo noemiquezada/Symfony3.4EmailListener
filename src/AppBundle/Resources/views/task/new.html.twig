@@ -1,16 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Start new Task, it's simple</h1>
-
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="Create Task" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('task_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <div class="task-form container">
+        <div class="row">
+            <div class="col s12">
+                <h4>Start new Task, it's simple</h4>
+            </div>
+        </div>
+        {{ form_start(form) }}
+        <div class="row">
+            {{ form_widget(form) }}
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit">Create Task</button>
+        </div>
+        {{ form_end(form) }}
+        <div class="row">
+            <ul>
+                <li>
+                    <a href="{{ path('task_index') }}">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}

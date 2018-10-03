@@ -35,6 +35,10 @@ class Assignee
      */
     private $email;
 
+    public function __toString()
+    {
+        return (string)$this->getName();
+    }
 
     /**
      * Get id

@@ -51,7 +51,7 @@ class Task
      * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Project")
      * @Assert\NotNull()
      */
-    private $projects;
+    private $project;
 
     
 
@@ -138,26 +138,26 @@ class Task
     }
 
     /**
-     * Set projects
+     * Set project
      *
-     * @param \AppBundle\Entity\Project $projects
+     * @param \AppBundle\Entity\Project $project
      *
      * @return Task
      */
-    public function setProjects(\AppBundle\Entity\Project $projects = null)
+    public function setProject(\AppBundle\Entity\Project $project = null)
     {
-        $this->projects = $projects;
+        $this->project = $project;
 
         return $this;
     }
 
     /**
-     * Get projects
+     * Get project
      *
      * @return \AppBundle\Entity\Project
      */
-    public function getProjects()
+    public function getProject()
     {
-        return $this->projects;
+        return $this->project;
     }
 }
