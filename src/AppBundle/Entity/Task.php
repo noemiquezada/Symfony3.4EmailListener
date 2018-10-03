@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Task
@@ -25,6 +26,7 @@ class Task
      * @var Assignee
      *
      * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Assignee")
+     * @Assert\NotNull()
      */
     private $assignedTo;
 
@@ -32,13 +34,14 @@ class Task
      * @var \DateTime
      *
      * @ORM\Column(name="dueDate", type="date")
+     * @Assert\Date()
      */
     private $dueDate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="description", type="blob", nullable=true)
      */
     private $description;
 
@@ -46,6 +49,7 @@ class Task
      * @var Project
      *
      * @ORM\ManyToOne(targetEntity="\AppBundle\Entity\Project")
+     * @Assert\NotNull()
      */
     private $projects;
 
