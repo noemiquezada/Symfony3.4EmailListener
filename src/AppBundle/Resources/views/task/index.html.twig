@@ -9,7 +9,7 @@
         <table class="tasks">
             {% for task in tasks %}
                 <tr class="{{ cycle(['even', 'odd'], loop.index) }}">
-                    <td class="dueDate">{{ task.dueDate }}</td>
+                    <td class="dueDate">{{ task.dueDate | date('Y-m-d') }}</td>
                     <td class="assignedTo">{{ task.assignedTo }}</td>
                     <td class="description">{{ task.description }}</td>
                 </tr>
